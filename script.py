@@ -5,10 +5,11 @@ import time
 from subprocess import call
 import sys
 
-mac = sys.argv[0] 
+mac = sys.argv[1] 
 
-print "In/Out Board"
+print "Ubuntu Now Auto-Suspending.."
 
+print mac
 def isThere(mac):
         return (bluetooth.lookup_name(mac, timeout=5) != None)
 
@@ -21,8 +22,8 @@ def canFind(mac):
 while True:
 	print "Time: " + time.strftime("%a, %d %b %Y %H:%M:%S", time.gmtime())
 	if(canFind(mac)):
-		call(['./away.sh'])	
+		call(['./there.sh'])	
 	else:
-		call(['./there.sh'])
+		call(['./away.sh'])
     	time.sleep(60)
 

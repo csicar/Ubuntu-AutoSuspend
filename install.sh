@@ -6,8 +6,8 @@ echo "${bylistart} \n Ubuntu-AutoSuspend Install \n ${byliend}";
 echo "${bylistart} \n Updating and Upgrading... ${byliend}"
 sudo apt-get update;
 sudo apt-get -y upgrade;
-echo "${bylistart} Installing bluez pip and git-core... ${byliend}"
-sudo apt-get -y install bluez pip git-core;
+echo "${bylistart} Installing bluez pip git-core python2.6 python2.6-dev... ${byliend}"
+sudo apt-get -y install bluez pip git-core python2.6 python2.6-dev;
 cd ~;
 echo "${bylistart}\n Installing bluez-python...\n ${byliend}";
 pip install pybluez
