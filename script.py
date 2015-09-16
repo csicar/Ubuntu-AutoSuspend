@@ -3,8 +3,9 @@
 import bluetooth
 import time
 from subprocess import call
+import sys
 
-htc1m8 = '00:ee:bd:6a:64:ff'
+mac = sys.argv[0] 
 
 print "In/Out Board"
 
@@ -18,10 +19,10 @@ def canFind(mac):
 
 
 while True:
-	print "Checking " + time.strftime("%a, %d %b %Y %H:%M:%S", time.gmtime())
-	if(canFind(htc1m8)):
-		call(['echo',' hi'])	
+	print "Time: " + time.strftime("%a, %d %b %Y %H:%M:%S", time.gmtime())
+	if(canFind(mac)):
+		call(['./away.sh'])	
 	else:
-		call(['./suspend.sh'])
+		call(['./there.sh'])
     	time.sleep(60)
 
